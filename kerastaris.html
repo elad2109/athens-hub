@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎯 ד״ר דימיטריס קרסטאריס (אתונה) | תזכורות קדם־ניתוח ודף שליפה מרוכז</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --card-border: #1f2937;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --primary: #38bdf8;
+      --accent: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --eng-bg: #1e293b;
+      --eng-text: #e0f2fe;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 16px;
+      font-size: 15px;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    header {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .header-sub {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+    .badge-live {
+      background: #10b981;
+      color: #022c22;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+    .rule-banner {
+      background: rgba(239, 68, 68, 0.12);
+      border: 2px solid #ef4444;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+    }
+    .rule-banner strong {
+      color: #f87171;
+      font-size: 1.05rem;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .rule-banner p {
+      font-size: 0.92rem;
+      color: #fecaca;
+      margin: 0;
+    }
+    .q-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 16px;
+      transition: border-color 0.2s;
+    }
+    .q-card.highlight {
+      border: 2px solid #f59e0b;
+      background: rgba(245, 158, 11, 0.05);
+    }
+    .q-card.safety {
+      border-inline-start: 5px solid #ef4444;
+    }
+    .q-card.technique {
+      border-inline-start: 5px solid #10b981;
+    }
+    .q-card.negotiation {
+      border-inline-start: 5px solid #3b82f6;
+    }
+    .q-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .q-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #f3f4f6;
+    }
+    .q-card.highlight .q-title {
+      color: #fbbf24;
+    }
+    .play-btn {
+      cursor: pointer;
+      background: #0284c7;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    .play-btn:hover {
+      background: #0369a1;
+      transform: translateY(-1px);
+    }
+    .play-btn.speaking {
+      background: #dc2626 !important;
+      color: #fff !important;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+    .eng-box {
+      background: var(--eng-bg);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      border: 1px solid #334155;
+    }
+    .eng-text {
+      direction: ltr;
+      text-align: left;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: var(--eng-text);
+      font-weight: 500;
+    }
+    .heb-explain {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      margin-top: 8px;
+    }
+    .heb-explain strong {
+      color: #38bdf8;
+    }
+    .why-ask {
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin-top: 8px;
+      font-size: 0.84rem;
+      color: #94a3b8;
+    }
+    .why-ask span {
+      font-weight: 700;
+      color: #a7f3d0;
+    }
+    button:focus-visible, a:focus-visible {
+      outline: 3px solid var(--primary);
+      outline-offset: 2px;
+    }
+    .action-pill-btn {
+      cursor: pointer;
+      background: #059669;
+      color: #ffffff;
+      border: 1px solid rgba(16, 185, 129, 0.5);
+      border-radius: 6px;
+      padding: 6px 14px;
+      min-height: 38px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .action-pill-btn:hover {
+      background: #047857;
+      transform: translateY(-1px);
+    }
+    .action-pill-btn.wa-link {
+      background: #1e293b;
+      border-color: #38bdf8;
+      color: #e0f2fe;
+    }
+    .action-pill-btn.wa-link:hover {
+      background: #0f172a;
+    }
+    .preop-reminder-card {
+      border: 2px solid #10b981;
+      background: rgba(16, 185, 129, 0.09);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+    }
+    :root[data-theme="dark"] .app-toplink-badge {
+      background: #111827 !important;
+      color: #93c5fd !important;
+      border-color: #334155 !important;
+    }
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="container">
+    
+    <header>
+      <div>
+        <h1>🎯 ד״ר דימיטריס קרסטאריס (אתונה) • תזכורות קדם־ניתוח ודף שליפה</h1>
+        <div class="header-sub">Metropolitan Hospital (Neo Faliro) • בדיקות קדם־ניתוח: שלישי 12.01.2027 בבוקר | ניתוח: רביעי 13.01.2027 • וואטסאפ: <span dir="ltr">+30 694 493 3960</span></div>
+      </div>
+      <div>
+        <span class="badge-live">🗓️ תזכורת פתוחה לסוף דצמבר 2026</span>
+      </div>
+    </header>
+
+    <!-- PRE-OP LAB ADD-ON REMINDER -->
+    <div class="q-card preop-reminder-card" id="preopLabAddonReminder">
+      <div class="q-header">
+        <span class="q-title" style="color:#6ee7b7;">🧪 תזכורת וואטסאפ לקראת הניתוח (28.12.2026 עד 04.01.2027): הוספת Lp(a), ApoB ו־hs-CRP על דקירת הבוקר ב־Metropolitan Hospital</span>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center;">
+          <button type="button" class="action-pill-btn" onclick="var t=document.getElementById('preopWaText');if(t&&navigator.clipboard){var b=this,o=b.textContent;navigator.clipboard.writeText(t.textContent.trim()).then(function(){b.textContent='✅ הועתק ללוח';setTimeout(function(){b.textContent=o;},2200);});}">📋 העתק הודעת וואטסאפ</button>
+          <a class="action-pill-btn wa-link" href="https://wa.me/306944933960?text=Hi%20Dr.%20Kerastaris%2C%20quick%20question%20before%20my%20pre-op%20morning%20on%20Tuesday%2C%2012%20January%20at%20Metropolitan%20Hospital.%20Can%20the%20hospital%20lab%20add%20Lp%28a%29%2C%20ApoB%2C%20hs-CRP%2C%20and%20a%20lipid%20panel%20onto%20my%20fasting%20pre-op%20blood%20draw%2C%20and%20what%20would%20the%20extra%20fee%20be%3F%20Could%20I%20also%20get%20a%20PDF%20of%20all%20results%3F%20Thanks%2C%20Elad" target="_blank" rel="noopener">💬 פתח וואטסאפ (+30 694 493 3960)</a>
+          <button type="button" class="play-btn" onclick="playSpeech(this)">🔊 השמע באנגלית</button>
+        </div>
+      </div>
+      <div class="eng-box">
+        <div class="eng-text" id="preopWaText">Hi Dr. Kerastaris, quick question before my pre-op morning on Tuesday, 12 January at Metropolitan Hospital. Can the hospital lab add Lp(a), ApoB, hs-CRP, and a lipid panel onto my fasting pre-op blood draw, and what would the extra fee be? Could I also get a PDF of all results? Thank you</div>
+      </div>
+      <div class="heb-explain">
+        <strong>מתי לשלוח ומה אומרת ההודעה:</strong> לשלוח בוואטסאפ כ־10 עד 14 יום לפני הטיסה (סביב 28.12.2026 עד 04.01.2027), כשמתאמים את שעת ההגעה בצום לבוקר יום שלישי ה־12 בינואר. השאלה בודקת האם מעבדת <strong>Metropolitan Hospital</strong> יכולה להוסיף <code>Lp(a)</code>, <code>ApoB</code>, <code>hs-CRP</code> ופרופיל שומנים מלא על אותה מבחנת דם בצום שהאחות כבר שואבת בבוקר הקדם־ניתוח, מה התוספת הכספית, וקבלת עותק PDF של כל התוצאות והאק״ג.
+      </div>
+      <div class="why-ask">
+        <span>⚖️ כלל אצבע להחלטה לפי הצעת המחיר שיחזירו:</span> אם תוספת המעבדה בבית החולים היא <strong>עד 75 עד 80 אירו</strong>, מאשרים וחוסכים לגמרי עצירה נפרדת בדקירה אחת. אם בית החולים הפרטי מתמחר לפי מחירון אשפוז יקר (120 עד 200 אירו) או לא מריץ <code>Lp(a)</code> במקום, מוותרים בנימוס ועוצרים ל־10 דקות ב־<strong>Bioiatriki</strong> באותו בוקר לפני בית החולים בחבילת <code>Biomed Λιπιδίων</code> ב־60 עד 65 אירו סה״כ (<a href="./index.html" style="color:#38bdf8; font-weight:700;">מרכז הבריאות והפעולה לאתונה</a>).
+      </div>
+    </div>
+
+    <div class="rule-banner">
+      <strong>🛑 כלל הברזל לסיום השיחה: לא סוגרים במקום ולא משלמים שום מקדמה היום</strong>
+      <p>ברגע שהוא עונה על השאלות ומאשר את החבילה, לא סוגרים תאריך ולא מעבירים כרטיס אשראי. אומרים לו פשוט: <em>"Thank you very much, Doctor. Please send me this full breakdown in writing to my email so I can review all the medical details, and I will follow up with you by email."</em> (שומרים על קלפים קרובים לחזה, לא חושפים רופאים אחרים, ולא ממהרים לשום התחייבות!).</p>
+    </div>
+
+    <!-- QUESTION 0 -->
+    <div class="q-card highlight">
+      <div class="q-header">
+        <span class="q-title">🩺 שאלה 0 (שאלת פתיחה): עצת הרופא הכנה, הגיל, הלב והשומן הפנים-בטני</span>
+        <button class="play-btn" style="background:#f59e0b; color:#78350f;" onclick="playSpeech(this)">🔊 השמע באנגלית</button>
+      </div>
+      <div class="eng-box">
+        <div class="eng-text">"Doctor, before we talk about logistics, I want to ask for your completely candid medical advice. I am 42, with an asymptomatic Bicuspid Aortic Valve, so I deliberately avoid heavy strain, maximal lifting, or extreme sprinting. My weight is stable, and I strictly manage my nutrition with zero alcohol and zero smoking. Because this is a purely aesthetic procedure, and as we age metabolism naturally slows down, my main hesitation is long-term health: could removing these subcutaneous fat cells trigger compensatory visceral fat accumulation over the years, and given my cardiac background, is the aesthetic benefit truly worth the intervention, or would you medically advise that I simply leave it alone?"</div>
+      </div>
+      <div class="heb-explain">
+        <strong>התרגום:</strong> &ldquo;דוקטור, לפני שנדבר על לוגיסטיקה, אני רוצה לבקש את עצתך הרפואית הכנה. אני בן 42, עם מסתם דו-צנפי ללא תסמינים, ולכן אני נמנע ממאמץ כבד קיצוני או ספרינטים עצימים. המשקל שלי יציב ואני מקפיד על תזונה ללא אלכוהול וללא עישון. מכיוון שזהו הליך אסתטי בלבד, והמטבוליזם מאט עם הגיל, החשש העיקרי שלי הוא בריאותי לטווח ארוך: האם הסרת תאי השומן התת-עוריים עלולה לגרום עם השנים לפיצוי של צבירת שומן פנים-בטני (ויסצרלי), ולאור הרקע הלבבי, האם התועלת האסתטית באמת שווה את הניתוח, או שמבחינה רפואית היית ממליץ לי פשוט לא לגעת בזה?&rdquo;
+      </div>
+      <div class="why-ask">
+        <span>💡 למה שואלים:</span> מבחן האמינות המכריע. מנתח אחראי יודה בכנות שזו החלטה אלקטיבית וששמירה על משקל יציב תמנע שומן ויסצרלי; איש מכירות ינפנף ויבטיח ש"הכל מושלם ואין שום סיכון".
+      </div>
+    </div>
+
+    <!-- QUESTION 1 -->
+    <div class="q-card technique">
+      <div class="q-header">
+        <span class="q-title">✨ שאלה 1: פיסול אתלטי טבעי ושמירה על שכבת חיץ (ללא חריטות וללא שקעים)</span>
+        <button class="play-btn" onclick="playSpeech(this)">🔊 השמע באנגלית</button>
+      </div>
+      <div class="eng-box">
+        <div class="eng-text">"Doctor, I want an athletic, sculpted V-taper contour, but I strictly want it to look 100% natural with zero artificial etching. I want full debulking of the deep fat pocket, but please ensure you preserve a smooth, uniform one-centimeter subcutaneous fat blanket so the skin stays soft, moves naturally, and never adheres to the muscle."</div>
+      </div>
+      <div class="heb-explain">
+        <strong>התרגום:</strong> &ldquo;דוקטור, אני רוצה קווי מתאר אתלטיים במבנה V-taper, אבל אני דורש באופן מוחלט שזה ייראה 100% טבעי ללא חריטות מלאכותיות. אני רוצה ריקון מלא של מאגר השומן העמוק, אך אנא ודא שאתה משמר שכבת חיץ שטחית אחידה וחלקה של סנטימטר אחד, כדי שהעור יישאר רך, ינוע בטבעיות, ולעולם לא יידבק לשריר.&rdquo;
+      </div>
+      <div class="why-ask">
+        <span>💡 למה שואלים:</span> מונע שאיבת יתר הרסנית (Over-resection) שגורמת לשקעים מכוערים והידבקות העור לשריר, וחוסם חריטות תעלות מלאכותיות (Etching).
+      </div>
+    </div>
+
+    <!-- QUESTION 2 -->
+    <div class="q-card technique">
+      <div class="q-header">
+        <span class="q-title">📐 שאלה 2: טשטוש מעל הטבור (Feathering) למניעת מדרגה</span>
+        <button class="play-btn" onclick="playSpeech(this)">🔊 השמע באנגלית</button>
+      </div>
+      <div class="eng-box">
+        <div class="eng-text">"Regarding the abdomen in Option B: my main subcutaneous fat pocket is sub-umbilical, below the belly button. Does your contouring naturally include feathering and blending into the lower edge of the upper abdomen above the belly button, so there is no step-off or shelf between the lower and upper abdomen? Is this transition blending fully included in the package so there are zero extra zone fees?"</div>
+      </div>
+      <div class="heb-explain">
+        <strong>התרגום:</strong> &ldquo;לגבי הבטן באופציה ב׳: מאגר השומן התת-עורי העיקרי שלי הוא מתחת לטבור. האם הפיסול שלך כולל באופן טבעי טשטוש ומיזוג עדין של קצה הבטן העליונה מעל הטבור, כדי שלא תיווצר שום מדרגה או קו הפרדה בין הבטן התחתונה לעליונה? והאם המיזוג הזה כלול במלואו במחיר החבילה ללא עלות נוספת על אזור נפרד?&rdquo;
+      </div>
+      <div class="why-ask">
+        <span>💡 למה שואלים:</span> מונע את מלכודת ה-"Shelf" (בטן עליונה שבולטת כמדף מעל בטן תחתונה שטוחה) וחוסם ניסיון לדרוש 1,000 אירו נוספים על "אזור עליון".
+      </div>
+    </div>
+
+    <!-- QUESTION 3 -->
+    <div class="q-card safety">
+      <div class="q-header">
+        <span class="q-title">🦴 שאלה 3: מנח צוואר ניטרלי בשכיבה על הבטן (הגנה על חוליות C5-C6)</span>
+        <button class="play-btn" onclick="playSpeech(this)">🔊 השמע באנגלית</button>
+      </div>
+      <div class="eng-box">
+        <div class="eng-text">"Regarding airway and positioning: will a dedicated anaesthesiologist monitor me throughout the entire procedure, and because of mild cervical disc sensitivity at C5-C6, how do you ensure my neck remains in a completely neutral position while prone on my stomach?"</div>
+      </div>
+      <div class="heb-explain">
+        <strong>התרגום:</strong> &ldquo;לגבי נתיב האוויר והמנח: האם רופא מרדים ייעודי ינטר אותי לאורך כל הניתוח, ולאור רגישות קלה בדיסקים הצוואריים ב-C5-C6, כיצד אתם מוודאים שהצוואר שלי נשאר במנח ניטרלי לחלוטין בזמן שאני שוכב על הבטן לשאיבת המותניים?&rdquo;
+      </div>
+      <div class="why-ask">
+        <span>💡 למה שואלים:</span> מונע מתיחת יתר (היפראקסטנציה) של הצוואר כנגד שולחן הניתוחים ומבטיח שימוש בכרית פרסה מותאמת.
+      </div>
+    </div>
+
+    <!-- QUESTION 4 -->
+    <div class="q-card safety">
+      <div class="q-header">
+        <span class="q-title">❤️ שאלה 4: ניטור נוזלים, אפינפרין וסרטרלין מול BAV</span>
+        <button class="play-btn" onclick="playSpeech(this)">🔊 השמע באנגלית</button>
+      </div>
+      <div class="eng-box">
+        <div class="eng-text">"Because I take Sertraline and have an asymptomatic Bicuspid Aortic Valve, how does your anaesthesiologist monitor fluid shifts, avoid excessive epinephrine in the tumescent fluid, and ensure lidocaine levels remain strictly within safe thresholds?"</div>
+      </div>
+      <div class="heb-explain">
+        <strong>התרגום:</strong> &ldquo;מכיוון שאני נוטל סרטרלין ובעל מסתם ותיני דו-צנפי ללא תסמינים, כיצד המרדים שלכם מנטר את עודפי הנוזלים, נמנע מעודף אפינפרין (אדרנלין) בנוזל ההרדמה, ומוודא שרמות הלידוקאין נשארות בטווח הבטוח ללב?&rdquo;
+      </div>
+      <div class="why-ask">
+        <span>💡 למה שואלים:</span> מוודא שההרדמה נעשית תחת בקרה קפדנית ללא ספייקים בלחץ הדם וללא עומס נפח על שורש האאורטה.
+      </div>
+    </div>
+
+    <!-- QUESTION 5 -->
+    <div class="q-card safety">
+      <div class="q-header">
+        <span class="q-title">🩸 שאלה 5: מניעת קרישי דם וטיסה חזרה לדבלין (DVT / Clexane)</span>
+        <button class="play-btn" onclick="playSpeech(this)">🔊 השמע באנגלית</button>
+      </div>
+      <div class="eng-box">
+        <div class="eng-text">"What is your precise protocol for DVT and pulmonary embolism prevention, especially considering my flight back to Dublin? Do you prescribe preventive blood thinners like Clexane and compression stockings?"</div>
+      </div>
+      <div class="heb-explain">
+        <strong>התרגום:</strong> &ldquo;מהו הפרוטוקול המדויק שלכם למניעת קרישי דם עמוקים ותסחיף ריאתי, במיוחד בהתחשב בטיסה שלי חזרה לדבלין? האם אתם רושמים מדללי דם מניעתיים כמו קלקסן וגרבי לחץ?&rdquo;
+      </div>
+      <div class="why-ask">
+        <span>💡 למה שואלים:</span> קלקסן וגרבי לחץ לטיסה הם תנאי בטיחות בלתי-מתפשרים להחלמה בטיסה סולו.
+      </div>
+    </div>
+
+    <!-- QUESTION 6 -->
+    <div class="q-card negotiation">
+      <div class="q-header">
+        <span class="q-title">🏥 שאלה 6: ליל אשפוז ראשון בהשגחת אחיות ב-Metropolitan General</span>
+        <button class="play-btn" onclick="playSpeech(this)">🔊 השמע באנגלית</button>
+      </div>
+      <div class="eng-box">
+        <div class="eng-text">"Can you confirm whether the first overnight stay under nursing care at Metropolitan General is included in the 3,000 Euro quote, or what is the exact hospital fee for that night?"</div>
+      </div>
+      <div class="heb-explain">
+        <strong>התרגום:</strong> &ldquo;האם תוכל לאשר האם ליל האשפוז הראשון בהשגחת אחיות בבית החולים Metropolitan General כלול בתוך הצעת ה-€3,000 שלך, או מהי העלות המדויקת של בית החולים עבור אותו לילה?&rdquo;
+      </div>
+      <div class="why-ask">
+        <span>💡 למה שואלים:</span> סוגר את ליל האשפוז הראשון בבית חולים כחלק מהחבילה (או מוודא שעלותו לא עולה על €250–€350).
+      </div>
+    </div>
+
+    <!-- QUESTION 7 -->
+    <div class="q-card negotiation">
+      <div class="q-header">
+        <span class="q-title">👕 שאלה 7: תוספת קפל חזה תחתון (אופציה C ללא חתך פטמה)</span>
+        <button class="play-btn" onclick="playSpeech(this)">🔊 השמע באנגלית</button>
+      </div>
+      <div class="eng-box">
+        <div class="eng-text">"If I decide later to include subtle micro-liposuction of the lower chest fold for mild Finasteride softness, with micro-cannula only and no incisions near the areola, what would be the exact price difference from Option B?"</div>
+      </div>
+      <div class="heb-explain">
+        <strong>התרגום:</strong> &ldquo;אם אחליט בעתיד לשלב שאיבה עדינה בקנולה דקה של קפל החזה התחתון לריכוך השומן מפינסטריד, ללא שום חתכים ליד הפטמה, מה יהיה ההפרש הכספי המדויק מאופציה ב׳?&rdquo;
+      </div>
+      <div class="why-ask">
+        <span>💡 למה שואלים:</span> בודק מראש האם תוספת חזה דורשת תוספת קטנה (€500) או שעדיף להמתין למדידה הפיזית בדבלין ב-06.11.
+      </div>
+    </div>
+
+    <!-- QUESTION 8 -->
+    <div class="q-card negotiation">
+      <div class="q-header">
+        <span class="q-title">✉️ שאלה 8: הנוסח החלק והמדויק לסיום השיחה (ללא חשיפת רופאים אחרים)</span>
+        <button class="play-btn" onclick="playSpeech(this)">🔊 השמע באנגלית</button>
+      </div>
+      <div class="eng-box">
+        <div class="eng-text">"Thank you very much, Doctor. Please send me this full breakdown in writing to my email so I can review all the medical details, and I will follow up with you by email."</div>
+      </div>
+      <div class="heb-explain">
+        <strong>התרגום:</strong> &ldquo;תודה רבה דוקטור. אנא שלח לי את הפירוט המלא בכתב למייל שלי כדי שאוכל לעבור על כל הפרטים הרפואיים בנחת, ואחזור אליך במייל.&rdquo;
+      </div>
+      <div class="why-ask">
+        <span>💡 למה שואלים:</span> סוגר את השיחה בכבוד, בנימוס ובשליטה מוחלטת, שומר על קלפים קרובים לחזה מבלי לחשוף בדיקות או רופאים אחרים, וחוסם כל ניסיון ללחוץ על סגירת תאריך או מקדמה היום.
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let activeUtterance = null;
+    let activeBtn = null;
+
+    // Strict blocklist for novelty, robotic, mature/aged voices (Albert, Fred, Daniel, David, Ralph, etc.)
+    const NON_STANDARD_VOICE_REGEX_ = /albert|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|junior|organ|pipe|princess|ralph|trinoids|vicki|whisper|zarvox|fred|espeak|novelty|rocko|shelley|grandma|grandpa|eddy|flo|reed|sandy|kathy|eloquence|jester|superstar|wobble|daniel|david/i;
+
+    function pickBestStandardVoice(synth) {
+      const voices = synth.getVoices() || [];
+      if (!voices.length) return null;
+
+      let bestVoice = null;
+      let bestScore = -999;
+
+      for (let i = 0; i < voices.length; i++) {
+        const v = voices[i];
+        if (!v) continue;
+        const name = String(v.name || '');
+        const lang = String(v.lang || '').toLowerCase().replace('_', '-');
+
+        // Strictly reject any aged, novelty, or disqualified voice
+        if (NON_STANDARD_VOICE_REGEX_.test(name)) continue;
+        if (!lang.startsWith('en')) continue;
+
+        let score = 10;
+        if (lang === 'en-us') score += 25;
+        if (v.localService === false) score += 15; // Network high-quality voices
+
+        if (/google us english/i.test(name)) score += 100;
+        else if (/google uk english female/i.test(name)) score += 95;
+        else if (/natural|neural|online|premium|enhanced|siri/i.test(name)) score += 85;
+        else if (/\b(samantha|ava|allison|alex|victoria|karen|serena|jenny|aria)\b/i.test(name)) score += 70;
+        else if (v.default) score += 30;
+
+        if (score > bestScore) {
+          bestScore = score;
+          bestVoice = v;
+        }
+      }
+      return bestVoice;
+    }
+
+    function playSpeech(btn) {
+      if (!('speechSynthesis' in window)) {
+        alert('Web Speech API is not supported in this browser.');
+        return;
+      }
+      const synth = window.speechSynthesis;
+
+      // Toggle off if currently speaking
+      if (btn.classList.contains('speaking')) {
+        synth.cancel();
+        btn.classList.remove('speaking');
+        btn.textContent = '🔊 השמע באנגלית';
+        activeBtn = null;
+        return;
+      }
+
+      // Reset any other speaking button
+      if (activeBtn) {
+        activeBtn.classList.remove('speaking');
+        activeBtn.textContent = '🔊 השמע באנגלית';
+      }
+
+      synth.cancel();
+
+      const card = btn.closest('.q-card');
+      const text = card.querySelector('.eng-text').textContent.replace(/[“”"]/g, '').trim();
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      utterance.rate = 0.96;
+      utterance.pitch = 1.0;
+
+      const chosenVoice = pickBestStandardVoice(synth);
+      if (chosenVoice) {
+        utterance.voice = chosenVoice;
+      }
+
+      btn.classList.add('speaking');
+      btn.textContent = '⏸️ עוצר / משמיע...';
+      activeBtn = btn;
+
+      const reset = () => {
+        btn.classList.remove('speaking');
+        btn.textContent = '🔊 השמע באנגלית';
+        if (activeBtn === btn) activeBtn = null;
+      };
+
+      utterance.onend = reset;
+      utterance.onerror = reset;
+
+      activeUtterance = utterance;
+      window._activeUtterance = utterance; // Prevent V8 garbage collection mid-speech
+      synth.speak(utterance);
+    }
+
+    // Preload voices
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.getVoices();
+      if ('onvoiceschanged' in window.speechSynthesis) {
+        window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+      }
+    }
+  </script>
+<!-- APP_SPEECH_VOICE_GUARD_START -->
+<script>
+(function() {
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+  var NON_STANDARD_VOICE_REGEX_ = /albert|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|junior|organ|pipe|princess|ralph|trinoids|vicki|whisper|zarvox|fred|espeak|novelty|rocko|shelley|grandma|grandpa|eddy|flo|reed|sandy|kathy|eloquence|jester|superstar|wobble|daniel|david/i;
+  var synth = window.speechSynthesis;
+  function pickStandardSpeechVoice_(langHint) {
+    var voices = synth.getVoices() || [];
+    var targetPrefix = String(langHint || 'en').toLowerCase().replace('_', '-').slice(0, 2);
+    var bestVoice = null;
+    var bestScore = -1;
+    for (var i = 0; i < voices.length; i++) {
+      var v = voices[i];
+      if (!v) continue;
+      var name = String(v.name || '');
+      var lang = String(v.lang || '').toLowerCase().replace('_', '-');
+      if (NON_STANDARD_VOICE_REGEX_.test(name)) continue;
+      if (lang.indexOf(targetPrefix) !== 0) continue;
+      var score = 10 + (lang === 'en-us' ? 30 : 20) + (v.localService === false ? 15 : 0);
+      if (/google us english/i.test(name)) score += 100;
+      else if (/google uk english female/i.test(name)) score += 90;
+      else if (/google uk english male/i.test(name)) score += 85;
+      else if (/natural|neural|online|premium|enhanced|siri/i.test(name)) score += 80;
+      else if (/\b(samantha|ava|allison|alex|victoria|karen|serena|zira|jenny|aria|guy|moira|carmi)\b/i.test(name)) score += 70;
+      else if (v.default) score += 40;
+      if (score > bestScore) {
+        bestScore = score;
+        bestVoice = v;
+      }
+    }
+    return bestVoice;
+  }
+  window.pickStandardSpeechVoice_ = pickStandardSpeechVoice_;
+  try { synth.getVoices(); } catch (e) {}
+  if ('onvoiceschanged' in synth && typeof synth.addEventListener === 'function') {
+    synth.addEventListener('voiceschanged', function() { try { synth.getVoices(); } catch (e) {} });
+  }
+  var origSpeak = synth.speak ? synth.speak.bind(synth) : null;
+  if (origSpeak && !synth.__eladbVoiceGuarded) {
+    synth.__eladbVoiceGuarded = true;
+    synth.speak = function(utterance) {
+      if (!utterance) return;
+      window._activeUtterance = utterance;
+      var applyAndSpeak = function() {
+        var curName = utterance.voice ? String(utterance.voice.name || '') : '';
+        var langHint = utterance.lang || (utterance.voice && utterance.voice.lang) || 'en-US';
+        if (!utterance.voice || NON_STANDARD_VOICE_REGEX_.test(curName) || !/google|natural|neural|siri|samantha|ava|allison|alex|karen|serena|moira/i.test(curName)) {
+          var pref = pickStandardSpeechVoice_(langHint);
+          if (pref) utterance.voice = pref;
+        }
+        if (!utterance.rate || utterance.rate < 0.8 || utterance.rate > 1.4) utterance.rate = 0.99;
+        if (!utterance.pitch || utterance.pitch < 0.85 || utterance.pitch > 1.15) utterance.pitch = 1.0;
+        origSpeak(utterance);
+      };
+      var curVoices = synth.getVoices() || [];
+      if (curVoices.length === 0 && typeof synth.addEventListener === 'function') {
+        var fired = false;
+        var onReady = function() {
+          if (fired) return;
+          fired = true;
+          synth.removeEventListener('voiceschanged', onReady);
+          applyAndSpeak();
+        };
+        synth.addEventListener('voiceschanged', onReady);
+        setTimeout(onReady, 180);
+      } else {
+        applyAndSpeak();
+      }
+    };
+  }
+})();
+</script>
+<!-- APP_SPEECH_VOICE_GUARD_END -->
+</body>
+</html>

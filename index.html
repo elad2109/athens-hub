@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athens Health & Action Hub | מרכז הפעולה והבריאות באתונה</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-hover: #0284c7;
+      --success: #34d399;
+      --warning: #fbbf24;
+      --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --accent: #0284c7;
+      --accent-hover: #0369a1;
+      --success: #059669;
+      --warning: #d97706;
+      --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 1.5rem;
+      min-height: 100vh;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .badge-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .controls {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text);
+      transition: all 0.15s ease-in-out;
+      min-height: 44px;
+    }
+
+    .btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0f172a;
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      color: #ffffff;
+    }
+
+    .bluf-banner {
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .bluf-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: 640px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .card-price {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--success);
+      background: rgba(52, 211, 153, 0.15);
+      padding: 0.15rem 0.5rem;
+      border-radius: 0.25rem;
+      margin-inline-start: auto;
+    }
+
+    .card-body {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .card-body ul {
+      padding-inline-start: 1.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .card-body li {
+      margin-bottom: 0.35rem;
+    }
+
+    .btn:focus-visible, .copy-btn:focus-visible, .seg-btn:focus-visible, a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .seg-group {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      overflow: hidden;
+      background: var(--card-bg);
+    }
+
+    .seg-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      padding: 0.45rem 0.75rem;
+      font-size: 0.825rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      min-height: 44px;
+      transition: background-color 0.15s, color 0.15s;
+    }
+
+    .seg-btn[aria-pressed="true"] {
+      background: #2563eb;
+      color: #ffffff;
+    }
+
+    [data-theme="light"] .seg-btn[aria-pressed="true"] {
+      background: #1d4ed8;
+      color: #ffffff;
+    }
+
+    .snippet-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-top: 1rem;
+      position: relative;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.825rem;
+      line-height: 1.5;
+      direction: ltr;
+      text-align: start;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    [data-theme="light"] .snippet-box {
+      background: #f1f5f9;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 0.5rem;
+      inset-inline-end: 0.5rem;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+      min-height: auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.25rem;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .copy-btn::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      inset-inline-start: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 44px;
+      min-height: 44px;
+    }
+
+    .copy-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+  </style>
+<!-- APP_AUTO_DARK_SURFACES_START -->
+<style>
+  :root[data-theme="dark"] [style*="background: #eff6ff"],
+  :root[data-theme="dark"] [style*="background:#eff6ff"],
+  :root[data-theme="dark"] [style*="background-color: #eff6ff"],
+  :root[data-theme="dark"] [style*="background-color:#eff6ff"] {
+    background: #111827 !important; color: #f8fafc !important; border-color: #334155 !important;
+  }
+  :root[data-theme="dark"] [data-theme="light"] .snippet-box {
+    background: #1e293b !important; color: #f8fafc !important; border-color: #334155 !important;
+  }
+  :root[data-theme="dark"] [style*="color: #137333"],
+  :root[data-theme="dark"] [style*="color:#137333"],
+  :root[data-theme="dark"] [style*="color: #065f46"] {
+    color: #86efac !important;
+  }
+  :root[data-theme="dark"] [style*="color: #6a1b9a"],
+  :root[data-theme="dark"] [style*="color:#6a1b9a"],
+  :root[data-theme="dark"] [style*="color: #6b21a8"] {
+    color: #d8b4fe !important;
+  }
+  :root[data-theme="dark"] [style*="color: #795548"],
+  :root[data-theme="dark"] [style*="color: #92400e"] {
+    color: #fcd34d !important;
+  }
+</style>
+<!-- APP_AUTO_DARK_SURFACES_END -->
+</head>
+<body data-theme="dark" data-lang="he">
+  <div class="container">
+    <header>
+      <div class="badge-bar">
+        <span class="badge">🏛️ Athens Triage 2027</span>
+        <span class="badge">⚡ Zero-Toil Action</span>
+      </div>
+      <div class="controls" style="flex-wrap: wrap;">
+        <div class="seg-group" role="group" aria-label="Language Switcher">
+          <button type="button" class="seg-btn" id="langBtnEn" aria-pressed="false" onclick="window.setLanguage('en')">🇬🇧 English</button>
+          <button type="button" class="seg-btn" id="langBtnHe" aria-pressed="true" onclick="window.setLanguage('he')">🇮🇱 עברית</button>
+        </div>
+        <div class="seg-group" role="group" aria-label="Theme Switcher">
+          <button type="button" class="seg-btn" id="themeBtnDay" aria-pressed="false" onclick="window.setTheme('light')" data-en="☀️ Day" data-he="☀️ יום">☀️ יום</button>
+          <button type="button" class="seg-btn" id="themeBtnNight" aria-pressed="true" onclick="window.setTheme('dark')" data-en="🌙 Night" data-he="🌙 לילה">🌙 לילה</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="bluf-banner">
+      <div class="bluf-title">
+        <span aria-hidden="true">📌</span>
+        <span class="t-he lang-he-only" data-he="שורה תחתונה: תוכנית פעולה אופטימלית באתונה (ינואר 2027)" data-en="Bottom Line: Optimal Athens Action Plan (Jan 2027)">שורה תחתונה: תוכנית פעולה אופטימלית באתונה (ינואר 2027)</span>
+      </div>
+      <p class="t-he">
+        מיקוד אך ורק בפעולות חד-פעמיות עם אפקט ממושך ופער עלויות חד מול דבלין (ללא פרוצדורות פולשניות או סורקים מסחריים): חבילת בדיקות דם <code>Biomed Λιπιδίων</code> ב־€50 בבוקר יום שלישי ה־12 בינואר לפני הניתוח (עם דרכון בלבד וללא הפניה), סקינורן 20% ללא מרשם בבית מרקחת, והחלמה שקטה.
+      </p>
+      <p class="t-en" style="display:none;">
+        Focus strictly on single-session, high-leverage health actions with major cost savings over Dublin: the €50 <code>Biomed Λιπιδίων</code> walk-in blood bundle on Tuesday morning 12 Jan 2027 pre-op (passport only, zero referral), OTC Skinoren 20% pharmacy pickup, and smooth recovery.
+      </p>
+    </div>
+
+    <div class="grid">
+      <!-- Card 1: Lab & Bioiatriki -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <span style="font-size: 1.25rem;" aria-hidden="true">🧪</span>
+            <span class="card-title t-he">מעבדת Bioiatriki (חבילת Biomed Λιπιδίων ללא הפניה)</span>
+            <span class="card-title t-en" style="display:none;">Bioiatriki Lab (Biomed Λιπιδίων Walk-In)</span>
+            <span class="card-price">€50 - €65</span>
+          </div>
+          <div class="card-body">
+            <div class="t-he">
+              <ul>
+                <li><strong>חבילת Biomed Λιπιδίων ב־€50 בלבד:</strong> כוללת יחד <code>Lp(a)</code>, <code>ApoB</code>, <code>ApoA1</code>, פרופיל שומנים מלא, סוכר בצום וספירת דם מלאה. מומלץ להוסיף באותה דקירה <code>hs-CRP</code> (€10-€15) ואופציונלית אולטרסאונד בטן ואאורטה (€35).</li>
+                <li><strong>100% ללא הפניה וללא תור:</strong> מגיעים עצמאית עם דרכון בלבד בצום מים של 10-12 שעות (להפסיק ביוטין 48 שעות קודם). סניף Kifisias 132 (Ampelokipoi) פתוח מ־06:00 בבוקר, תוצאות PDF למייל תוך 24 שעות.</li>
+                <li><strong style="color: var(--warning);">⚠️ חלון חובה (בוקר שלישי 12.01.2027 לפני הניתוח בלבד):</strong> אסור לבצע בימי ההחלמה (14-21 בינואר) כי הדלקת מהניתוח מקפיצה <code>hs-CRP</code> ומעוותת זמנית <code>LDL</code>, <code>ApoB</code> וספירת דם.</li>
+                <li><strong>אפס כפל תשלום (או איחוד לדקירה אחת בבית החולים):</strong> ספירה, קרישה, כליות וסוכר לקדם־ניתוח כבר כלולים בחינם באותו בוקר ב־Metropolitan Hospital (לבקש PDF מהאחות). בסוף דצמבר שואלים בוואטסאפ את ד״ר קרסטאריס כמה יעלה להוסיף <code>Lp(a)</code>, <code>ApoB</code> ו־<code>hs-CRP</code> על אותה דקירה בבית החולים: עד €75–€80 עושים הכל שם וחוסכים עצירה (<a href="./kerastaris.html#preopLabAddonReminder" target="_blank" rel="noopener" style="color:var(--accent);">תזכורת ונוסח מוכן בדף הרופא</a>).</li>
+              </ul>
+            </div>
+            <div class="t-en" style="display:none;">
+              <ul>
+                <li><strong>Biomed Λιπιδίων Bundle (€50):</strong> Covers <code>Lp(a)</code>, <code>ApoB</code>, <code>ApoA1</code>, full Lipids, fasting Glucose, and FBC in one draw. Add <code>hs-CRP</code> (€10-€15) and optional abdominal/aorta ultrasound (€35).</li>
+                <li><strong>100% Walk-In, Zero Referral:</strong> Passport only + 10-12h water-only fast (stop biotin 48h prior). Kifisias Ave 132 (Ampelokipoi) opens at 06:00 AM; PDF results emailed within 24h.</li>
+                <li><strong style="color: var(--warning);">⚠️ Critical Window (Tue Morning 12 Jan 2027 Pre-Op Only):</strong> Never test post-op (14-21 Jan), as surgical inflammation spikes <code>hs-CRP</code> and distorts <code>LDL</code>, <code>ApoB</code>, and <code>FBC</code>.</li>
+                <li><strong>Zero Double-Pay (or 1-Draw Hospital Option):</strong> Pre-op FBC, coagulation, and renal labs are already free that morning at Metropolitan Hospital (ask nurse for PDF). In late December, message Dr. Kerastaris on WhatsApp to ask the extra fee to add <code>Lp(a)</code>, <code>ApoB</code>, and <code>hs-CRP</code> onto that draw: if &le;€75-€80, do it all in 1 draw (<a href="./kerastaris.html#preopLabAddonReminder" target="_blank" rel="noopener" style="color:var(--accent);">ready WhatsApp script on Doctor Page</a>).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <button type="button" class="btn btn-primary" style="flex: 1;" onclick="copyLabCard()" data-he="🧪 העתק כרטיס למעבדה" data-en="🧪 Copy Lab Card">🧪 העתק כרטיס למעבדה</button>
+          <a href="./kerastaris.html#preopLabAddonReminder" target="_blank" rel="noopener" class="btn" style="text-decoration:none;" data-he="💬 תזכורת לד״ר קרסטאריס" data-en="💬 Dr. Kerastaris Reminder">💬 תזכורת לד״ר קרסטאריס</a>
+          <a href="https://maps.google.com/?q=Bioiatriki+Ampelokipoi+Athens" target="_blank" rel="noopener" class="btn" style="text-decoration:none;" data-he="📍 מפה" data-en="📍 Maps">📍 מפה</a>
+        </div>
+      </div>
+
+      <!-- Card 2: Dermatologist & Skinoren OTC Pharmacy -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <span style="font-size: 1.25rem;" aria-hidden="true">🩺</span>
+            <span class="card-title t-he">רופא עור / בית מרקחת (סקינורן 20% ללא מרשם)</span>
+            <span class="card-title t-en" style="display:none;">Dermatology &amp; Skinoren 20% OTC</span>
+            <span class="card-price">€10 - €70</span>
+          </div>
+          <div class="card-body">
+            <div class="t-he">
+              <ul>
+                <li><strong>ללא צורך במרשם (EOF):</strong> ביוון סקינורן 20% (Skinoren Azelaic Acid) נמכרת מעבר לדלפק (OTC) בבתי מרקחת (שלט צלב ירוק Φαρμακείο) בכ-€10 לשפופרת (קנה 2 שפופרות שמספיקות לשנה מלאה).</li>
+                <li><strong>אין חובה ברופא עור למשחה:</strong> נכנסים ישירות לכל בית מרקחת ברחוב ומבקשים מהרוקח. אם רוקח ספציפי דורש מרשם, ממשיכים 50 מטר לבית המרקחת הבא.</li>
+                <li><strong>אופציונלי (סקר שומות גוף מלא):</strong> הזמנה דרך <code>Doctoranytime.gr</code> בקולונאקי / סינטגמה (€50-€60) לבדיקת שומות בלבד (לסרב ללייזר או פילינג).</li>
+              </ul>
+            </div>
+            <div class="t-en" style="display:none;">
+              <ul>
+                <li><strong>OTC in Greece (EOF):</strong> Skinoren 20% Azelaic Acid is sold directly over the counter across Greek pharmacies (Φαρμακείο green cross) for ~€10/tube (buy 2 tubes for a 1-year supply).</li>
+                <li><strong>No Doctor Visit Needed for Cream:</strong> Walk into any local pharmacy and ask the pharmacist. If one asks for an Rx, walk 50m to the next pharmacy.</li>
+                <li><strong>Optional Dermoscopy:</strong> Book via <code>Doctoranytime.gr</code> in Kolonaki/Syntagma (€50-€60) for full-body mole check only (decline in-clinic peels/lasers).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="copyPharmacyCard()" data-he="💊 העתק פנייה לרוקח (סקינורן)" data-en="💊 Copy Pharmacy Card">💊 העתק פנייה לרוקח (סקינורן)</button>
+      </div>
+
+      <!-- Card 3: Eye Exam (LASEK Adjusted) -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <span style="font-size: 1.25rem;" aria-hidden="true">👁️</span>
+            <span class="card-title t-he">בדיקת עיניים מומחה (מתואמת לאסק)</span>
+            <span class="card-title t-en" style="display:none;">Ophthalmology (LASEK-Adjusted)</span>
+            <span class="card-price">€50 - €70</span>
+          </div>
+          <div class="card-body">
+            <div class="t-he">
+              <ul>
+                <li><strong>מדוע מומחה ולא אופטומטריסט:</strong> קרנית דקה לאחר לאסק (15 שנה) מציגה לחץ תוך-עיני נמוך כוזב.</li>
+                <li><strong>מה לבקש:</strong> מדידת לחץ בגולדמן מתואמת פכימטריה (Pachymetry) ובדיקת רשתית בהרחבת אישונים.</li>
+                <li><strong>אתונה מול דבלין:</strong> בדבלין מכוסה בהחזר חלקי ב-Vhi (השתתפות עצמית דומה), אך באתונה הזמינות מיידית ללא הפניה.</li>
+              </ul>
+            </div>
+            <div class="t-en" style="display:none;">
+              <ul>
+                <li><strong>Why Specialist:</strong> Thin post-LASEK cornea produces false-low IOP readings on standard tonometers.</li>
+                <li><strong>What to Request:</strong> Pachymetry-adjusted IOP measurement and dilated fundus examination.</li>
+                <li><strong>Athens vs. Dublin:</strong> Equivalent out-of-pocket to Vhi co-pay, but zero wait time or GP referral in Greece.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <a href="https://www.doctoranytime.gr/en/d/ophthalmiatros/athina" target="_blank" rel="noopener" class="btn" style="text-decoration:none;" data-he="🔍 תור ב-Doctoranytime" data-en="🔍 Book on Doctoranytime">🔍 תור ב-Doctoranytime</a>
+      </div>
+
+      <!-- Card 4: Max Cushion Shoes & Outlets -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <span style="font-size: 1.25rem;" aria-hidden="true">👟</span>
+            <span class="card-title t-he">נעלי שיכוך מקסימלי (ארביטראז' עודפים)</span>
+            <span class="card-title t-en" style="display:none;">Max Cushion Shoe Arbitrage</span>
+            <span class="card-price">€80 - €105</span>
+          </div>
+          <div class="card-body">
+            <div class="t-he">
+              <ul>
+                <li><strong>הקלה על הצוואר (C5-C7):</strong> סוליית שיכוך עבה (35-40 מ"מ) שבולמת זעזועים בהליכה.</li>
+                <li><strong>דגמי דור קודם מנצחים:</strong> Asics Nimbus 25, Hoka Bondi 8, New Balance 1080v13.</li>
+                <li><strong>רכישה אונליין לדבלין:</strong> Sportsshoes.com או Runnerinn (חיסכון של 50% מול ישראל).</li>
+                <li><strong>קילדייר וילג' (שאטל ממרכז דבלין):</strong> קו 300 Green Bus ב-€14 הלוך-חזור + 10% הנחת VIP.</li>
+              </ul>
+            </div>
+            <div class="t-en" style="display:none;">
+              <ul>
+                <li><strong>Neck &amp; Spine Relief:</strong> 35-40mm thick foam stack absorbing walking impact on pavement.</li>
+                <li><strong>Previous Gen Winners:</strong> Asics Nimbus 25, Hoka Bondi 8, NB 1080v13.</li>
+                <li><strong>Online to Dublin:</strong> Sportsshoes.com or Runnerinn (50% cheaper than Israel).</li>
+                <li><strong>Kildare Village Shuttle:</strong> Dublin Coach route 300 for €14 return + 10% VIP pass.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <a href="./kerastaris.html" class="btn btn-outline" style="text-decoration:none;" data-he="🩺 פתח את דף ההכנה והשאלות לד״ר קראסטאריס" data-en="🩺 Open Dr. Kerastaris Prep &amp; Questions Page">🩺 פתח את דף ההכנה והשאלות לד״ר קראסטאריס</a>
+      </div>
+    </div>
+
+    <!-- Lab Counter Snippet Box -->
+    <div style="margin-bottom: 1.5rem;">
+      <h3 style="font-size: 1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        <span aria-hidden="true">🧪</span>
+        <span class="t-he">כרטיס מוכן לדלפק מעבדת Bioiatriki (בוקר יום שלישי 12.01.2027 לפני הניתוח, בצום ועם דרכון ללא הפניה: חבילת Biomed Λιπιδίων ב־€50 + hs-CRP)</span>
+        <span class="t-en" style="display:none;">Bioiatriki Walk-In Counter Card (Tue Morning 12 Jan 2027 Pre-Op, Fasting &amp; Passport Only: €50 Biomed Λιπιδίων + hs-CRP)</span>
+      </h3>
+      <div class="snippet-box" id="labCardText">
+<button type="button" class="copy-btn" onclick="copyLabCard()">Copy Text</button>Good morning. I am a private self-pay patient (fasting 10-12h, passport ready, no doctor referral).
+I would like the "Biomed Lipidion" check-up package (€50, including Lp(a), ApoB, Lipids, Glucose, and FBC) plus hs-CRP, with PDF results sent to my email.
+(Καλημέρα σας. Ιδιωτικά χωρίς παραπεμπτικό: Πακέτο Biomed Λιπιδίων €50 + hs-CRP, αποστολή αποτελεσμάτων με email.)</div>
+    </div>
+
+    <!-- Pharmacy Counter Snippet Box -->
+    <div style="margin-bottom: 1.5rem;">
+      <h3 style="font-size: 1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        <span aria-hidden="true">💊</span>
+        <span class="t-he">כרטיס רכישה מהירה לרוקח באתונה (סקינורן 20% ללא מרשם: כ־€10 לשפופרת)</span>
+        <span class="t-en" style="display:none;">Quick Pharmacy Counter Card for Skinoren 20% (OTC: ~€10/tube)</span>
+      </h3>
+      <div class="snippet-box" id="pharmacyCardText">
+<button type="button" class="copy-btn" onclick="copyPharmacyCard()">Copy Text</button>Hello, I would like to buy 2 tubes of Skinoren 20% cream (Azelaic Acid), please.
+(Γεια σας, θα ήθελα 2 σωληνάρια κρέμα Skinoren 20%, παρακαλώ.)</div>
+    </div>
+
+    <!-- Doctor Briefing Snippet Box -->
+    <div style="margin-bottom: 2rem;">
+      <h3 style="font-size: 1rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+        <span aria-hidden="true">📋</span>
+        <span class="t-he">כרטיס פנייה מוכן לרופא העור באתונה (להצגה מהטלפון)</span>
+        <span class="t-en" style="display:none;">English Clinical Card for Dermatologist (48 Words)</span>
+      </h3>
+      <div class="snippet-box" id="doctorCardText">
+<button type="button" class="copy-btn" onclick="copyDoctorCard()">Copy Text</button>Hello Doctor,
+
+I live in Dublin and am visiting Athens for a few days.
+
+I need two things today:
+1. A full-body mole check with the dermatoscope.
+2. A diagnosis for facial redness (seborrhea vs rosacea) and a written prescription for pharmacy creams.
+
+No in-clinic procedures today, just the examination and prescription.</div>
+    </div>
+
+    <footer>
+      <p data-lang-block="he">מרכז בריאות ופעולה לאתונה | <a href="./kerastaris.html" style="color: var(--accent);">דף ד״ר קראסטאריס והטרום־ניתוח</a> | נובמבר 2026</p>
+      <p data-lang-block="en" style="display:none;">Athens Health &amp; Action Hub | <a href="./kerastaris.html" style="color: var(--accent);">Dr. Kerastaris &amp; Pre-Op Page</a> | November 2026</p>
+    </footer>
+  </div>
+
+  <script>
+    window.setTheme = function(mode) {
+      const nextTheme = (mode === 'light' || mode === 'day') ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', nextTheme);
+      document.body.setAttribute('data-theme', nextTheme);
+      const dayBtn = document.getElementById('themeBtnDay');
+      const nightBtn = document.getElementById('themeBtnNight');
+      if (dayBtn) dayBtn.setAttribute('aria-pressed', nextTheme === 'light' ? 'true' : 'false');
+      if (nightBtn) nightBtn.setAttribute('aria-pressed', nextTheme === 'dark' ? 'true' : 'false');
+      try { localStorage.setItem('athens_hub_theme_v2', nextTheme); } catch (e) {}
+    };
+
+    window.setLanguage = function(lang) {
+      const nextLang = (lang === 'en') ? 'en' : 'he';
+      const isEn = nextLang === 'en';
+      document.documentElement.lang = nextLang;
+      document.documentElement.dir = isEn ? 'ltr' : 'rtl';
+      document.body.setAttribute('data-lang', nextLang);
+      document.body.dir = isEn ? 'ltr' : 'rtl';
+
+      const btnEn = document.getElementById('langBtnEn');
+      const btnHe = document.getElementById('langBtnHe');
+      if (btnEn) btnEn.setAttribute('aria-pressed', isEn ? 'true' : 'false');
+      if (btnHe) btnHe.setAttribute('aria-pressed', !isEn ? 'true' : 'false');
+
+      document.querySelectorAll('[data-en][data-he]').forEach(el => {
+        el.textContent = isEn ? el.getAttribute('data-en') : el.getAttribute('data-he');
+      });
+      document.querySelectorAll('.t-he').forEach(el => {
+        if (!el.hasAttribute('data-en')) el.style.display = isEn ? 'none' : '';
+      });
+      document.querySelectorAll('.t-en').forEach(el => {
+        if (!el.hasAttribute('data-en')) el.style.display = isEn ? '' : 'none';
+      });
+      try { localStorage.setItem('athens_hub_lang', nextLang); } catch (e) {}
+    };
+    window.setLang = window.setLanguage;
+
+    (function initPrefs() {
+      const params = new URLSearchParams(window.location.search);
+      let savedTheme = 'dark';
+      try { savedTheme = localStorage.getItem('athens_hub_theme_v2') || 'dark'; } catch (e) {}
+      const qTheme = params.get('theme');
+      window.setTheme(qTheme ? qTheme : savedTheme);
+
+      let savedLang = 'he';
+      try { savedLang = localStorage.getItem('athens_hub_lang') || 'he'; } catch (e) {}
+      const qLang = params.get('lang');
+      window.setLanguage(qLang ? qLang : savedLang);
+
+      document.addEventListener('keydown', (e) => {
+        const tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : '';
+        if (tag === 'input' || tag === 'textarea' || tag === 'select' || (e.target && e.target.isContentEditable)) return;
+        if (e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.key === 'd' || e.key === 'D') {
+          const cur = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          window.setTheme(cur);
+        } else if (e.key === 'l' || e.key === 'L') {
+          const curLang = document.body.getAttribute('data-lang') === 'en' ? 'he' : 'en';
+          window.setLanguage(curLang);
+        }
+      });
+    })();
+
+    function copyLabCard() {
+      const text = `Good morning. I am a private self-pay patient (fasting 10-12h, passport ready, no doctor referral).
+I would like the "Biomed Lipidion" check-up package (€50, including Lp(a), ApoB, Lipids, Glucose, and FBC) plus hs-CRP, with PDF results sent to my email.
+(Καλημέρα σας. Ιδιωτικά χωρίς παραπεμπτικό: Πακέτο Biomed Λιπιδίων €50 + hs-CRP, αποστολή αποτελεσμάτων με email.)`;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('הכרטיס למעבדת Bioiatriki הועתק ללוח | Lab card copied');
+      });
+    }
+
+    function copyPharmacyCard() {
+      const text = `Hello, I would like to buy 2 tubes of Skinoren 20% cream (Azelaic Acid), please.
+(Γεια σας, θα ήθελα 2 σωληνάρια κρέμα Skinoren 20%, παρακαλώ.)`;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('הכרטיס לרוקח הועתק ללוח | Pharmacy card copied');
+      });
+    }
+
+    function copyDoctorCard() {
+      const text = `Hello Doctor,
+
+I live in Dublin and am visiting Athens for a few days.
+
+I need two things today:
+1. A full-body mole check with the dermatoscope.
+2. A diagnosis for facial redness (seborrhea vs rosacea) and a written prescription for pharmacy creams.
+
+No in-clinic procedures today, just the examination and prescription.`;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('הכרטיס הועתק ללוח | Card copied to clipboard');
+      });
+    }
+  </script>
+</body>
+</html>
